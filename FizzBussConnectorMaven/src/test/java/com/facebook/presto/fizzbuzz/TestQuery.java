@@ -40,6 +40,7 @@ public class TestQuery {
         return choice;
     }
 
+
     public static void main(String[] args) throws IOException {
 
         // read in user's sql command from stdin, for example: select * from table for "Fizz"

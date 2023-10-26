@@ -24,7 +24,11 @@ import com.facebook.presto.spi.transaction.IsolationLevel;
 
 import javax.inject.Inject;
 
+import java.io.*;
+
 import java.util.HashMap;
+
+
 
 
 import static com.facebook.presto.fizzbuzz.ExampleTransactionHandle.INSTANCE;
@@ -65,6 +69,17 @@ public class FizzBuzzConnector
                 fullmap.put(i, Integer.toString(i));
         }
 
+        return switch (choice.toLowerCase()) {
+            case "fizz" -> fizzmap;
+            case "buzz" -> buzzmap;
+            case "fizzbuzz" -> fizzbuzzmap;
+            case "full" -> fullmap;
+            default -> {
+                System.out.println("invalid choice, return null");
+                yield null;
+            }
+        };
+    }
         //linda
 
 
